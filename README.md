@@ -13,16 +13,13 @@ Main functions to work with are:
     4) Saves the model with name model_name to train_directory
     
     Arguments:
+    
      :train_images_path: str (required) Path to the directory consisting of the folders with channel corresponding images, e.g.
     train_images_path/lipid/...(lipid images)', 'train_images_path/protein/...(protein images)'
-    
     :target_channel_names: str (required) String with target channel names splitted by commas WITHOUT SPACES
     Names should be the same as the folders in train_images_path, e.g. ('lipid,protein,dapi')
-    
     :train_directory: str (required) Path to the directory where all training data will be saved (val_masks, val_images, model, e.t.c)
-    
     :device: str ('cpu' or 'cuda') Device on which the model will be trained
-    
     :init_features: int Number of filters used in UNet architecture (for more info look at the architecture in Unet.py)
     
 2. markup.py 
@@ -31,10 +28,8 @@ Main functions to work with are:
     
     Arguments:
     :model_path: str (required) Path to the state dict file of the trained model (by now works only for UNet architecture!)
-    
     :markup_images_path: str (required) Path to the images for which we want the masks to be produced. markup_images_path should
     consist of channel corresponding folders, e.g. markup_images_path/lipid/...(lipid images).
-    
     :target_channel_names: str (required) String consisting of channel names splittted by commas WITHOUT SPACES.
     To work properly all of channels should be:
     1) among the channel folders names in markup_images_path
@@ -48,15 +43,11 @@ Main functions to work with are:
     
     Arguments:
     :masks_directory_path: str (required) Path to masks directory
-    
     :images_path: str (required) path to channel corresponding folders with images
-    
     :target_channel_names: str (required)  String of channel names spliited by commas WITHOUT SPACES for which to calculate the
     integrated signal. Should be chosen from exiting folders names in images_path/.
-    
     :save: bool If True saves the json file with integrated signals to the save_path directory, if False only gives the dict
     object as an output
-    
     :interest_mask: str If not None calculates the integrated signal only for given mask name, otherwise for all masks in
     masks_directory_path
     
