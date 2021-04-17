@@ -12,7 +12,7 @@ Main functions to work with are:
     The model is trained on random crops of size (train_image_width, train_image_height) of images in train_images_path
     4) Saves the model with name model_name to train_directory
     
-    Arguments:
+    #### Arguments:
     
      :train_images_path: str (required) Path to the directory consisting of the folders with channel corresponding images, e.g.
     train_images_path/lipid/...(lipid images)', 'train_images_path/protein/...(protein images)' 
@@ -30,7 +30,7 @@ Main functions to work with are:
 
     Predicts and saves the masks for given images using the trained UNet model
     
-    Arguments:
+    #### Arguments:
     
     :model_path: str (required) Path to the state dict file of the trained model (by now works only for UNet architecture!)
     
@@ -48,7 +48,7 @@ Main functions to work with are:
     channel over the mask, i.e. calculates the sum of pixels in the channel over all corresponding non-zero pixels in
     the mask.
     
-    Arguments:
+    #### Arguments:
     
     :masks_directory_path: str (required) Path to masks directory
     
