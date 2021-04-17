@@ -1,3 +1,4 @@
+from torch.utils import data
 import torch
 import os
 import skimage
@@ -7,7 +8,7 @@ from torchvision import transforms
 import time
 from copy import copy
 from typing import List
-from torch.utils import data
+
 
 # to avoid hidden files such as DS_Store
 IS_IMAGE = lambda img: img[img.rfind('.') + 1:] in ('jpg', 'png', 'tif', 'bmp')
@@ -47,7 +48,7 @@ class DataLoaderRandomSquare(data.Dataset):
             image_layers.append(image_layer if len(image_layer.shape) == 3 else image_layer[:, :, None])
         image = np.concatenate(image_layers, -1)
         if self.masks_path is not None:
-            mask = skimage.img_as_ubyte(io.imread(os.path.join(self.masks_path, self.masks[image_index])))
+            mask = io.imread(os.path.join(self.masks_path, self.masks[image_index]))
 
         if self.random_square:
             y_left_upper_corner = np.random.randint(0, image.shape[0] - self.height)
@@ -155,6 +156,6 @@ def train_loop(model,
             print(f'Training epoch loss: {training_scores[-1]}')
             print("Epoch {} of {} took {:.3f}s".format(epoch + 1, num_epochs, time.time() - start_time))
     if save:
-        torch.save(model.state_dict(), f'./{save_name}')
+        torch.save(model.state_dict(), f'{save_name}')
 
     return (training_scores, validation_scores) if validate else training_scores

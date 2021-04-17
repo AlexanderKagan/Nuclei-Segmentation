@@ -23,7 +23,7 @@ def masks_from_coco_json(coco_json, save=True, save_path='./all_masks/'):
         if not os.path.exists(save_path):
             os.makedirs(save_path)
         for filename, array_image in filename_2_array_image.items():
-            io.imsave(save_path + filename, array_image)
+            io.imsave(save_path + filename, array_image, check_contrast=False)
     return filename_2_array_image
 
 
@@ -46,7 +46,7 @@ def cut_image_into_rectangulars(image_path, width=128, height=128,
             rectangular_indices = range(len(rectangulars))
 
         for rect_idx in rectangular_indices:
-            io.imsave(save_path + '_{}.{}'.format(rect_idx, frmt), rectangulars[rect_idx])
+            io.imsave(save_path + '_{}.{}'.format(rect_idx, frmt), rectangulars[rect_idx], check_contrast=False)
 
     return rectangulars
 
