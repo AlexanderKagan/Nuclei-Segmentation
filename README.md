@@ -66,7 +66,7 @@ Main functions to work with are:
     masks_directory_path
     
 ## Terminal launching
-0) Go to folder where the envirinment folder with needed python packages will be saved
+0) Go to folder where the environment folder with needed python packages will be saved
 1) Make new python environment (in the example called 'env'):
     ```console
     python3 -m venv env
