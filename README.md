@@ -82,7 +82,7 @@ Main functions to work with are:
     python train.py --coco_json_path 'jsons/coco_all_labels.json' --train_images_path 'train_images/' --target_channel_names 'dapi,lipid' --validate True 
     ```  
     After that in the repo folder there will appear directories /train_masks, /val_masks, /val_images and model file with default name 'unet'
-5) To make the markup of the images in some folder (for example in /val_images) do the following
+5) To make the markup of the images in some folder (for example in /val_images) do the following (target_channel_names ORDER MATTERS!)
    ```console
     python markup.py --model_path './unet' --markup_images_path './val_images/' --target_channel_names 'dapi,lipid'
     ```
