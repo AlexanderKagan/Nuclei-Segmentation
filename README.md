@@ -26,6 +26,8 @@ Main functions to work with are:
     
     :init_features: int Number of filters used in UNet architecture (for more info look at the architecture in Unet.py)
     
+    :model_name: str name of the model file saved after the training procedure (path to existing folder + name also possible, e.g. './models/unet')
+    
 2. markup.py 
 
     Predicts and saves the masks for given images using the trained UNet model
