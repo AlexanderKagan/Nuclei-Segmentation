@@ -15,7 +15,7 @@ Main functions to work with are:
     Arguments:
     
      :train_images_path: str (required) Path to the directory consisting of the folders with channel corresponding images, e.g.
-    train_images_path/lipid/...(lipid images)', 'train_images_path/protein/...(protein images)'
+    train_images_path/lipid/...(lipid images)', 'train_images_path/protein/...(protein images)' \\
     :target_channel_names: str (required) String with target channel names splitted by commas WITHOUT SPACES
     Names should be the same as the folders in train_images_path, e.g. ('lipid,protein,dapi')
     :train_directory: str (required) Path to the directory where all training data will be saved (val_masks, val_images, model, e.t.c)
