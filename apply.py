@@ -6,7 +6,7 @@ import argparse
 
 
 def integrate_image_signal_over_channels(masks_directory_path: str, images_path: str,
-                                         target_channel_names: str, save=False, save_path: str = '.',
+                                         target_channel_names: str, save=True, save_path: str = '.',
                                          interest_mask=None):
     """
     For each pair of mask in masks_directory_path and image channel in images_path/target_channel_name integrates the
@@ -56,8 +56,8 @@ if __name__ == '__main__':
     parser.add_argument('--masks_directory_path', action='store', type=str, required=True)
     parser.add_argument('--images_path', action='store', type=str, required=True)
     parser.add_argument('--target_channel_names', action='store', type=str, required=True)
-    parser.add_argument('--save', action='store', type=bool, default=False)
-    parser.add_argument('--save_path', action='store', type=int, default='.')
+    parser.add_argument('--save', action='store', type=bool, default=True)
+    parser.add_argument('--save_path', action='store', type=str, default='.')
     parser.add_argument('--interest_mask', action='store', type=str, default=None)
 
     args = parser.parse_args()

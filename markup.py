@@ -7,7 +7,7 @@ from skimage import io
 import argparse
 
 
-def markup(model_path: str, markup_images_path: str, target_channel_names: str, save_path: str = '.', device='cpu',
+def markup(model_path: str, markup_images_path: str, target_channel_names: str, save_path: str = './markups', device='cpu',
            if_binary_mask=True):
     """
     Predicts and saves the masks for given images using the trained UNet
@@ -51,10 +51,11 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='train model')
     parser.add_argument('--model_path', action='store', type=str, required=True)
+    parser.add_argument('--markup_images_path', action='store', type=str, required=True)
     parser.add_argument('--target_channel_names', action='store', type=str, required=True)
     parser.add_argument('--if_binary_mask', action='store', type=bool, default=True)
     parser.add_argument('--device', action='store', type=str, default='cpu')
-    parser.add_argument('--save_path', action='store', type=int, default='.')
+    parser.add_argument('--save_path', action='store', type=str, default='./markups')
 
     args = parser.parse_args()
     markup(**vars(args))
