@@ -93,7 +93,7 @@ Main functions to work with are:
    ```console
    python apply.py --masks_directory_path 'markups' --images_path 'val_images' --target_channel_names 'dapi,lipid' 
    ``` 
-   To integrate particular image instead of all of them in the folder use argument --interst_mask (for example 'dapi_0_0'):
+   To integrate particular image instead of all of them in the folder use argument --interst_mask (for example 'dapi_0_0.tif'):
    ```console  
    python apply.py --masks_directory_path 'markups' --images_path 'val_images' --target_channel_names 'dapi,lipid' --interst_mask 'dapi_0_0.tif'
    ```
