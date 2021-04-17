@@ -27,6 +27,7 @@ Main functions to work with are:
     Predicts and saves the masks for given images using the trained UNet model
     
     Arguments:
+    
     :model_path: str (required) Path to the state dict file of the trained model (by now works only for UNet architecture!)
     :markup_images_path: str (required) Path to the images for which we want the masks to be produced. markup_images_path should
     consist of channel corresponding folders, e.g. markup_images_path/lipid/...(lipid images).
@@ -42,6 +43,7 @@ Main functions to work with are:
     the mask.
     
     Arguments:
+    
     :masks_directory_path: str (required) Path to masks directory
     :images_path: str (required) path to channel corresponding folders with images
     :target_channel_names: str (required)  String of channel names spliited by commas WITHOUT SPACES for which to calculate the
